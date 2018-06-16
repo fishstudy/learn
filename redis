@@ -1,0 +1,20 @@
+1: redis 数据类型
+   字符串
+   hash
+   队列
+   有序队列
+
+
+ 2:redis 两种固化方式
+    Redis DataBase(简称RDB)   间隔时间和变更次数决定
+    优点：单独子进程来持续优化，主进程不会有任何IO，不影响redis的高可用性
+    缺点：间隔一段时间进行持久化，如故障会发生数据丢失
+
+
+    Append-only file (简称AOF)
+    优点：保持更高的数据完整性
+    缺点：AOF文件比RDB文件大，且恢复速度慢 较大的IO开支
+
+
+    策略： master AOF 确保完整性 
+          slave rdb
