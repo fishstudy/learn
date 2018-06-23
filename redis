@@ -18,3 +18,10 @@
 
     策略： master AOF 确保完整性 
           slave rdb
+
+
+    redis 查找key 的办法
+    keys 如果比较多会阻塞
+    scan 无阻塞的取出指定模式的key列表
+
+    
